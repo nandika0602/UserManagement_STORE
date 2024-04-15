@@ -326,6 +326,7 @@ const App = (props) => {
     </div>
   );
 };
+
 const mapStateToProps = (state) => {
   return {
     count: state.count,
