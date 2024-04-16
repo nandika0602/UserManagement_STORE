@@ -33,20 +33,14 @@ const App = (props) => {
   } = props;
   const [searchValue, setSearchValue] = useState("");
   const dispatch = useDispatch();
-  console.log(fList, "fList");
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("list"));
     const user1 = JSON.parse(localStorage.getItem("fList"));
-    // console.log(user, user1);
     if (user) {
-      // setList(user);
       dispatch(setListAction(user));
     }
     if (user1?.length) {
-      // restore(user);
-      // dispatch(() => restore(user))
-      // setFList(user1);
       dispatch(setFListAction(user1));
     } else {
       dispatch(setFListAction([]));

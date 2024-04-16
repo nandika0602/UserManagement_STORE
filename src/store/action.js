@@ -24,8 +24,7 @@ const adduser1 = (num) => ({
   payload: num,
 });
 
-export const addUser = (num) => (dispatch, s) => {
-  console.log("action add", s());
+export const addUser = (num) => (dispatch) => {
   dispatch(adduser1(num));
 };
 
@@ -38,7 +37,6 @@ export const search = (val) => {
 };
 
 export const deleteUser = (id) => {
-  console.log("action");
   return { type: DELETE_USER, payload: id };
 };
 
@@ -46,7 +44,6 @@ export const editUser = (user) => {
   return { type: EDIT_USER, payload: user };
 };
 export const deleteAll = () => {
-  console.log("delete action");
   return { type: DELETE_ALL };
 };
 

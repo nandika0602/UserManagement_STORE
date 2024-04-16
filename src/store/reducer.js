@@ -128,7 +128,6 @@ const reducer = (state = initialState, action) => {
       };
     }
   }
-  //   }
 
   if (action.type === RESET_USER) {
     return { ...state, data: initialState.data, editKey: null };
@@ -163,31 +162,18 @@ const reducer = (state = initialState, action) => {
   }
 
   if(action.type === DELETE_ALL) {
-    console.log('deleting...');
     localStorage.setItem("list", JSON.stringify([]));
     localStorage.setItem("fList", JSON.stringify([]));
     return initialState
   }
 
   if(action.type === RESTORE_LIST) {
-    // const user = JSON.parse(localStorage.getItem("fList"));
-    // const user1 = JSON.parse(localStorage.getItem("fList"));
-    // console.log(action.payload, action);
-    // const a = {...action.payload};
-    console.log(...action.payload);
     const a = {...state, list: action.payload};
-    console.log(a, 'a');
     return {...state, list: action.payload}
   }
 
   if(action.type === RESTORE_FLIST) {
-    // const user = JSON.parse(localStorage.getItem("fList"));
-    // const user1 = JSON.parse(localStorage.getItem("fList"));
-    // console.log(action.payload, action);
-    // const a = {...action.payload};
-    console.log(...action.payload);
     const a = {...state, fList: action.payload};
-    console.log(a, 'a');
     return {...state, fList: action.payload}
   }
   return state;
